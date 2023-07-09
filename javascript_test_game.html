@@ -59,8 +59,8 @@
     <!-- 以下是我自己加的输入框 02-->
     <div>
         <input type="email submit" placeholder="输入你的邮箱" class="inputEmail">
-        <button type="submit" onclick="showEmail()" class="submitEmail">提交</button>
-        <p class="showEmail"> 你输入的邮箱是：</p>
+        <button type="submit" onclick="showEmail()" id="submitEmail">提交</button>
+        <p id="showEmail"> 你输入的邮箱是：</p>
     </div>
 
 
@@ -80,6 +80,7 @@
 
 
         const inputSubmit = document.querySelector(".inputSubmit");
+        const submitEmail = document.querySelector('.inputEmail');
 
         function checkGuess() {
             const userGuess = Number(guessField.value);
@@ -166,14 +167,16 @@
         //input 02 的JS代码：
         //没成功错误了。。。。
         submitEmail.addEventListener("click", showEmail);
-
-        let typedEmail = document.querySelector(".inputEmail")
+        
 
         function showEmail() {
             let printEmail = document.getElementById("showEmail");
             document.body.append(printEmail);
-            printEmail.textContent = typedEmail.value;
+            printEmail.textContent = submitEmail.value;
+            
         }
+
+        console.log("submitEmail:" + submitEmail.value)
 
 
     </script>
